@@ -65,4 +65,12 @@ Starting with the obvious ...
         	return QUANAH.avar(x)
     	}
 	}
-... more soon ...
+So to multiply 9 by 2 one could do
+
+	> K(9).Q(K(
+		function(x){return 2*x}
+	  ))
+	
+	> AVar {..., val: 18}
+
+calling it a day, more tomorrow

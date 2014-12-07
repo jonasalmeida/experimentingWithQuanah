@@ -47,7 +47,7 @@ console.log('current x:',x)
 K=function(x){
     if(typeof(x)=="function"){ //this is about a function
         var fun=x;
-        console.log('fun:',x)
+        //console.log('fun:',x) // <-- uncomment to see what function is being scoped
         return function(evt){ 
             this.val = fun(this.val)
             return evt.exit()
