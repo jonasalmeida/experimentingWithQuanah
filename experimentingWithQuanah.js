@@ -44,7 +44,7 @@ console.log('current x:',x)
 
 ////// TIME FOR K /////
 
-K=function(x){
+K1=function(x){
     if(typeof(x)=="function"){ //this is about a function
         var fun=x;
         //console.log('fun:',x) // <-- uncomment to see what function is being scoped

@@ -47,12 +47,12 @@ Run lala again, but only after something that takes a couple of seconds
 
 Let's see how can one use Q to build a DSL at the intersetion of mathematical notation and coding styles to describe workflows that are both assynchronous and distributed. [Lambda calculus](http://en.wikipedia.org/wiki/Lambda_calculus) is probably the unavoidable reference in this exercise. JavaScript is a natural environment for the experiments below, not only because of its pervasive availability in the Web Browser but also because it treats functions as first class objects. The syntax adopted betrays more recent cross-compilation exploits by the more abstract notation of [CoffeeScript](http://en.wikipedia.org/wiki/CoffeeScript) (i.e. a notaion that can be automatically converted into JavaScript).
 
-### K patterns of Q
+#### K patterns of Q
 Let's see how this might work, the basic idea is to use K to identify shortened patterns that use Quanah.
 
-Starting with the obvious ...
+Starting (K1) with the obvious ...
 
-	K=function(x){
+	K1=function(x){
     	if(typeof(x)=="function"){ //this is about a function
         	var fun=x;
         	//console.log('fun:',x) // <-- uncomment to see what function is being scoped
@@ -67,10 +67,21 @@ Starting with the obvious ...
 	}
 So to multiply 9 by 2 one could do
 
-	> K(9).Q(K(
-		function(x){return 2*x}
-	  ))
+	< 	K1(9).Q(K1(
+			function(x){return 2*x}
+	  	))
 	
-	> AVar {..., val: 18}
+	> 	AVar {..., val: 18}
 
-calling it a day, more tomorrow
+and using a function as a value would be
+
+	< 	K1().Q(K1(function(){return function(){}}))
+	
+	> 	AVar {..., val: function(){}}
+
+#### Assynchronous chaining
+So this is where things get interresting because QMachine handles distribution between multiple  machines. If we can represent sussession without worrying about its orchestration involving multiple machines we may end up in an interresting place ...
+
+(oops, interruption, more later) 
+
+
